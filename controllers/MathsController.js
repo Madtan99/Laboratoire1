@@ -1,5 +1,4 @@
 const MathsModel = require('../models/maths');
-const Repository = require('../models/repository');
 function NumberIsFirst(number) {
     if (number == 2){
         return false;
@@ -15,7 +14,6 @@ module.exports =
     class MathsController extends require('./Controller') {
         constructor(HttpContext) {
             super(HttpContext);
-            this.repository = new Repository(new MathsModel());
         }
         get() {
             if (this.HttpContext.path.queryString[0] == '?') {
